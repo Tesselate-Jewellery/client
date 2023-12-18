@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useAuth } from '../utils/AuthContext';
 
 const Login = () => {
     
+    const { setAuthenticated } = useAuth();
     const navigate = useNavigate();
-    const [jwt, setJwt] = useState("");
+    // const [jwt, setJwt] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    useEffect(() => {
-        console.log(`JWT value is:\n${jwt}`);
-    }, [jwt]);
 
     async function login_user(){
         console.log(email, password);
@@ -25,7 +23,7 @@ const Login = () => {
                 });
 
             let data = await result.data;
-            setJwt(data);
+            setAuthenticated(data);
             // navigate("/");
 
             toast.success("Successfully logged in!");
@@ -63,6 +61,12 @@ const Login = () => {
         <button type="submit">Submit</button>
         <span>
             Already have an account? <Link to={"/signup"}>Signup</Link>
+        </span>
+        <span>
+            See jwt <Link to={"/example"}>Example</Link>
+        </span>
+        <span>
+            Check Protected Route <Link to={"/protected"}>Protected</Link>
         </span>
         </form>
         <ToastContainer />
