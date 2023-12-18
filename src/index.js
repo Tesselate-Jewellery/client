@@ -4,22 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthProvider } from './utils/AuthContext';
 
 // Import components from pages
-export {default as Login} from './pages/Login'
-export {default as Signup} from './pages/Signup'
-export {default as Home} from './pages/Home'
+// export {default as Login} from './pages/Login'
+// export {default as Signup} from './pages/Signup'
+// export {default as Home} from './pages/Home'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
