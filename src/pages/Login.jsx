@@ -20,12 +20,16 @@ const Login = () => {
             let result = await axios.post(process.env.REACT_APP_BACKEND_URL + "users/sign-in", {
                 email,
                 password,
-                });
+            });
+
+            let data = await result.data;
+            setJwt(data);
+            navigate("/");
+
         } catch (err) {
-            toast.error((err));
+            console.error(err);
+            toast.error("An error occurred. Please try again.");
         }
-
-
     }
     
     return (
