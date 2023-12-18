@@ -14,17 +14,21 @@ const Login = () => {
         console.log(`JWT value is:\n${jwt}`);
     }, [jwt]);
 
-    async function login(){
+    async function login_user(){
         console.log(email, password);
         try{
-            let result = await axios.post(process.env.REACT_APP_BACKEND_URL + "users/sign-in", {
+            let result = await axios.post(
+                process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
+                {
                 email,
                 password,
-            });
+                });
 
             let data = await result.data;
             setJwt(data);
             navigate("/");
+
+            toast.success("Successfully logged in!");
 
         } catch (err) {
             console.error(err);
@@ -35,7 +39,7 @@ const Login = () => {
     return (
     <div className="form_container">
         <h2>Login Account</h2>
-        <form onSubmit={(event) => {event.preventDefault(); login(); }}>
+        <form onSubmit={(event) => {event.preventDefault(); login_user(); }}>
         <div>
             <label htmlFor="email">Email</label>
             <input
