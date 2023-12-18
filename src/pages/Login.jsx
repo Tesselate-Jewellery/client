@@ -26,7 +26,7 @@ const Login = () => {
 
             let data = await result.data;
             setJwt(data);
-            navigate("/");
+            // navigate("/");
 
             toast.success("Successfully logged in!");
 
