@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext'; 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const { jwt, role, setAuthenticated } = useAuth();
+    const navigate = useNavigate();
   
     const handleLogout = () => {
         // Set jwt and role to blank for logout
         setAuthenticated({ jwt: '', role: '' });
         toast.success("Successfully Logged Out!");
+        navigate("/")
     };
 
     return (
