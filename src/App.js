@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import ViewAllOpals from './pages/ViewAllOpals';
+import EditOpal from './pages/EditOpal';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -27,7 +30,10 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/example" element={<ExampleComponent />} />
           <Route path="/protected" element={<ProtectedRoute />} />
-        </Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/opals" element={<ViewAllOpals />} />
+          <Route path="/edit-opal/:opal_id" element={<EditOpal />} />
+        </Routes> 
 
         <Footer />
       </BrowserRouter>
