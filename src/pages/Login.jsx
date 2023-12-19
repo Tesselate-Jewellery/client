@@ -5,33 +5,31 @@ import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from '../utils/AuthContext';
 
 const Login = () => {
-    
     const { setAuthenticated } = useAuth();
     const navigate = useNavigate();
-    // const [jwt, setJwt] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    async function login_user(){
-        console.log(email, password);
-        try{
-            let result = await axios.post(
-                process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
-                {
-                email,
-                password,
-                });
-
-            let data = await result.data;
-            setAuthenticated(data);
-            // navigate("/");
-
-            toast.success("Successfully logged in!");
-
-        } catch (err) {
-            console.error(err);
-            toast.error("An error occurred. Please try again.");
-        }
+  
+    async function login_user() {
+      console.log(email, password);
+      try {
+        let result = await axios.post(
+          process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
+          {
+            email,
+            password,
+          });
+  
+        let data = await result.data;
+        setAuthenticated(data);
+        // navigate("/");
+  
+        toast.success("Successfully logged in!");
+  
+      } catch (err) {
+        console.error(err);
+        toast.error("An error occurred. Please try again.");
+      }
     }
     
     return (
