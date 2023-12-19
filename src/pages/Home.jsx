@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../components/NavBar'; // Adjust the path based on your project structure
 import { useAuth } from '../utils/AuthContext';
-import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
+  const { jwt, role } = useAuth();
+  
   return (
     <div className="home-container">
-      {/* Toast Container */}
-      <ToastContainer />
-
-      {/* Navigation Section */}
-      <NavBar />
-
       {/* Header Section */}
       <header>
         <div className="header-content">
