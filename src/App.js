@@ -1,11 +1,15 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import NavBar from './components/NavBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+// import components
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import NavBar from './components/NavBar';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ExampleComponent from './pages/ExampleComponent';
 import ProtectedRoute from './pages/ProtectedRoute';
 
@@ -13,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <NavBar />
         <ToastContainer />
 
@@ -23,6 +28,8 @@ function App() {
           <Route path="/example" element={<ExampleComponent />} />
           <Route path="/protected" element={<ProtectedRoute />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
