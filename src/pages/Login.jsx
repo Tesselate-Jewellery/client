@@ -5,34 +5,52 @@ import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from '../utils/AuthContext';
 
 const Login = () => {
-    
     const { setAuthenticated } = useAuth();
     const navigate = useNavigate();
-    // const [jwt, setJwt] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    async function login_user(){
+  
+    async function login_user() {
         console.log(email, password);
-        try{
-            let result = await axios.post(
-                process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
-                {
-                email,
-                password,
-                });
+        try {
+          let result = await axios.post(
+            process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
+            {
+              email,
+              password,
+            }
+          );
+      
+          let data = await result.data;
+          console.log(data);
+      
+          // Assuming data contains jwt and role ID
+          const { jwt, role: roleId } = data;
 
-            let data = await result.data;
-            setAuthenticated(data);
+          console.log(`THE ROLE ID IS: ${roleId}`);
+      
+          // Fetch role details based on role ID
+          const rolesResponse = await fetch(process.env.REACT_APP_BACKEND_URL + "roles");
+          const rolesResult = await rolesResponse.json();
+          const matchingRole = rolesResult.data.find(role => role._id === roleId);
+      
+          if (matchingRole) {
+            // Set authenticated data in the context with role name
+            setAuthenticated({ jwt, role: matchingRole.name });
+      
+            // Navigate to the desired page (e.g., home page)
             // navigate("/");
-
+      
             toast.success("Successfully logged in!");
-
-        } catch (err) {
-            console.error(err);
+          } else {
+            console.error('Role not found');
             toast.error("An error occurred. Please try again.");
+          }
+        } catch (err) {
+          console.error(err);
+          toast.error("An error occurred. Please try again.");
         }
-    }
+      }
     
     return (
     <div className="form_container">
