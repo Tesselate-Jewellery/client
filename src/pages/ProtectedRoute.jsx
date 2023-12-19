@@ -3,7 +3,7 @@ import { useAuth } from '../utils/AuthContext';
 import { useState } from 'react';
 
 const ProtectedRoute = () => {
-    const { jwt } = useAuth();
+    const { jwt, role } = useAuth();
     const [data, setData] = useState(null);
 
     const fetchData = async () => {
@@ -23,20 +23,21 @@ const ProtectedRoute = () => {
       };
 
     return (
-    <div>
-      <button onClick={fetchData}>Fetch Protected Data</button>
-      {data && (
         <div>
-          <h2>Data for {data.role}:</h2>
-          {/* Display data based on user role */}
-          {data.role === 'admin' && <p>Admin-specific information</p>}
-          {data.role === 'staff' && <p>Staff-specific information</p>}
-          {data.role === 'user' && <p>User-specific information</p>}
+            {["admin", "staff"].includes(role) && (
+            <button onClick={fetchData}>Fetch Protected Data</button>
+            )}
+            {data && (
+            <div>
+                <h2>Data for {role}:</h2>
+                {/* Display data based on user role */}
+                {role === 'admin' && <p>Admin-specific information</p>}
+                {role === 'staff' && <p>Staff-specific information</p>}
+                {role === 'user' && <p>User-specific information</p>}
+            </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 };
     
 export default ProtectedRoute;
-    
