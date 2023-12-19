@@ -39,7 +39,7 @@ const Login = () => {
             setAuthenticated({ jwt, role: matchingRole.name });
       
             // Navigate to the desired page (e.g., home page)
-            // navigate("/");
+            navigate("/");
       
             toast.success("Successfully logged in!");
           } else {
