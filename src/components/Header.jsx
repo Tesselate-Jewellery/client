@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../utils/AuthContext';
 
 const Header = () => {
+    const { jwt } = useAuth();
 
     return (
         <header>
@@ -9,10 +11,11 @@ const Header = () => {
                 <h1>Tesselate Jewellery</h1>
             </Link>
             <Link to="/dashboard">
-                <span>Dashboard</span>
+                {jwt ? <span>Dashboard</span> : <span></span>}
             </Link>
         </header>
     );
 };
 
 export default Header;
+
