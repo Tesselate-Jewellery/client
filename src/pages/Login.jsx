@@ -25,9 +25,10 @@ const Login = () => {
           console.log(data);
       
           // Assuming data contains jwt and role ID
-          const { jwt, role: roleId } = data;
+          const { jwt, role: roleId, userID } = data;
 
           console.log(`THE ROLE ID IS: ${roleId}`);
+          console.log(`THE USER ID IS: ${userID}`)
       
           // Fetch role details based on role ID
           const rolesResponse = await fetch(process.env.REACT_APP_BACKEND_URL + "roles");
@@ -36,7 +37,7 @@ const Login = () => {
       
           if (matchingRole) {
             // Set authenticated data in the context with role name
-            setAuthenticated({ jwt, role: matchingRole.name });
+            setAuthenticated({ jwt, role: matchingRole.name, userID });
       
             // Navigate to the desired page (e.g., home page)
             navigate("/");

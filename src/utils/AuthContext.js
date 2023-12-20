@@ -6,12 +6,13 @@ export const AuthProvider = ({ children }) => {
     const [authData, setAuthData] = useState({
         jwt: '',
         role: '', // Add the role state
+        userID: '', 
     });
     
 
-    const setAuthenticated = ({ jwt, role }) => {
-        console.log(`Setting JWT: ${jwt} and Role: ${role}`);
-        setAuthData({ jwt, role });
+    const setAuthenticated = ({ jwt, role, userID }) => {
+        console.log(`Setting JWT: ${jwt} and Role: ${role} and userID: ${userID}`);
+        setAuthData({ jwt, role, userID });
     };
 
 
