@@ -7,6 +7,7 @@ const Dashboard = () => {
     const { role } = useAuth();
     const navigate = useNavigate();
     const showAdminDashboard = ["admin"].includes(role);
+    const showAdminAndStaffDashboard = ["admin", "staff"].includes(role);
 
     const handleViewAllOpals = () => {
         navigate('/opals')
@@ -18,7 +19,10 @@ const Dashboard = () => {
 
     return (
         <div>
-            <button onClick={handleViewAllOpals}>View All Opals</button>
+            <button>Edit Profile</button>
+            {showAdminAndStaffDashboard && (
+                <button onClick={handleViewAllOpals}>View All Opals</button>
+            )}
             {showAdminDashboard && (
                 <div>
                     <button>Create New Opal</button>
