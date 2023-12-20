@@ -60,9 +60,9 @@ const ViewAllUsers = () => {
 
         // Filter out the deleted user from the state
         setUserData((prevUsers) => prevUsers.filter((user) => user._id !== userId));
-        toast.success("User Successfully Removed!")
+            toast.success("User Successfully Removed!")
         } catch (error) {
-        console.error('Error deleting user:', error);
+            console.error('Error deleting user:', error);
         }
     };
 

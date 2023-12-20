@@ -17,6 +17,10 @@ const Dashboard = () => {
         navigate('/users')
     }
 
+    const handleViewAllQuotes = () => {
+        navigate('/quotes')
+    }
+
     const handleCreateNewOpal = () => {
         navigate('/create-new-opal')
     }
@@ -41,7 +45,7 @@ const Dashboard = () => {
                 <div>
                     <button onClick={handleCreateNewOpal}>Create New Opal</button>
                     <button onClick={handleViewAllUsers}>View All Users</button>
-                    <button>View All Quotes</button>
+                    <button onClick={handleViewAllQuotes}>View All Quotes</button>
                 </div>
             )}
         </div>
