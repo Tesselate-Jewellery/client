@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Dashboard = () => {
-    const { role } = useAuth();
+    const { role, userID } = useAuth();
     const navigate = useNavigate();
     const showAdminDashboard = ["admin"].includes(role);
     const showAdminAndStaffDashboard = ["admin", "staff"].includes(role);
@@ -21,8 +21,19 @@ const Dashboard = () => {
         navigate('/create-new-opal')
     }
 
+    const handleEditProfile = () => {
+        // Check if userID is available
+        if (userID) {
+            // Navigate to the EditUser page with the userID as a parameter
+            navigate(`/edit-profile/${userID}`);
+        } else {
+            console.error('UserID is undefined');
+        }
+    };
+
     return (
         <div>
+            <button onClick={handleEditProfile}>Edit Profile</button>
             {showAdminAndStaffDashboard && (
                 <button onClick={handleViewAllOpals}>View All Opals</button>
             )}
