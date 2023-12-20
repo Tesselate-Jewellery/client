@@ -8,6 +8,7 @@ const LoadingIndicator = () => <p>Loading...</p>;
 const QuoteDetails = ({ quote, onDelete }) => {
     const { jwt } = useAuth();
     const [createdByUsername, setCreatedByUsername] = useState('');
+    const [opalName, setOpalName] = useState('');
 
     const handleDeleteClick = () => {
         onDelete(quote._id);
@@ -22,26 +23,44 @@ const QuoteDetails = ({ quote, onDelete }) => {
                         jwt: jwt,
                     },
                 });
-                
+
                 console.log(quote.createdBy);
                 console.log('User Response:', response.data);  // Log the entire response
-                setCreatedByUsername(response.data.username);  // Corrected line
+                setCreatedByUsername(response.data.username);
             } catch (error) {
                 console.error('Error fetching username', error);
             }
         };
-    
+
+        const fetchOpalName = async () => {
+            try {
+                console.log('Fetching opal name for ID:', quote.opal);
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}opals/${quote.opal}`, {
+                    headers: {
+                        jwt: jwt,
+                    },
+                });
+
+                console.log(quote.opal);
+                console.log('Opal Response:', response.data);  // Log the entire response
+                setOpalName(response.data.name);
+            } catch (error) {
+                console.error('Error fetching opal name', error);
+            }
+        };
+
         fetchUsername();
-    }, [jwt, quote.createdBy]);
+        fetchOpalName();
+    }, [jwt, quote.createdBy, quote.opal]);
 
     return (
         <div key={quote._id}>
             <h2>{createdByUsername}</h2>
+            <h3>{opalName}</h3>
             <h3>{quote.metal}</h3>
             <h3>{quote.setting}</h3>
             <h3>{quote.ringSize}</h3>
             <h3>{quote.pricing}</h3>
-            <h3>{quote.opal}</h3>
             <h3>{quote.createdAt}</h3>
             <button onClick={handleDeleteClick}>Delete Quote</button>
         </div>

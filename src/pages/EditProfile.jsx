@@ -14,7 +14,6 @@ const EditUser = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [passwordsMatch, setPasswordsMatch] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,14 +49,14 @@ const EditUser = () => {
             case 'email':
                 setEmail(event.target.value);
                 break;
-                case 'password':
-                    setPassword(event.target.value);
-                    break;
-                case 'confirmPassword':
-                    setConfirmPassword(event.target.value);
-                    break;
-                default:
-                    break;
+            case 'password':
+                setPassword(event.target.value);
+                break;
+            case 'confirmPassword':
+                setConfirmPassword(event.target.value);
+                break;
+            default:
+                break;
         }
     };
 
@@ -74,7 +73,6 @@ const EditUser = () => {
             if (password !== confirmPassword) {
                 // Display a toast error message
                 toast.error('Passwords do not match. Please re-enter your passwords.');
-                setPasswordsMatch(false);
                 return;
             }
 
@@ -126,9 +124,6 @@ const EditUser = () => {
                 value={confirmPassword}
                 onChange={handleInputChange}
             />
-            {!passwordsMatch && (
-                <p style={{ color: 'red' }}>Passwords do not match. Please re-enter your passwords.</p>
-            )}
             <button onClick={handleSaveClick}>Save</button>
             <button onClick={() => navigate('/dashboard')}>Go Back</button>
         </div>
