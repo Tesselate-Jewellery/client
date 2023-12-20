@@ -23,7 +23,6 @@ const Dashboard = () => {
 
     return (
         <div>
-            <button>Edit Profile</button>
             {showAdminAndStaffDashboard && (
                 <button onClick={handleViewAllOpals}>View All Opals</button>
             )}
