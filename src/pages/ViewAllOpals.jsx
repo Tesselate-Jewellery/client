@@ -26,6 +26,7 @@ const OpalDetails = ({ opal }) => {
       </div>
     );
   };
+
 const ViewAllOpals = () => {
     const { jwt } = useAuth();
     const [opalsData, setOpalsData] = useState([]);
@@ -42,13 +43,13 @@ const ViewAllOpals = () => {
                     },
                 });
 
-        console.log(response.data);
-        setOpalsData(response.data.opalsArray);
+                console.log(response.data);
+                setOpalsData(response.data.opalsArray);
 
-      } catch (error) {
-            console.error('Error fetching data:', error);
-      } finally {
-        setIsLoading(false);
+            } catch (error) {
+                    console.error('Error fetching data:', error);
+            } finally {
+                setIsLoading(false);
       }
     };
 

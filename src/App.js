@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import ViewAllOpals from './pages/ViewAllOpals';
+import ViewAllUsers from './pages/ViewAllUsers';
 import EditOpal from './pages/EditOpal';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/opals" element={<ViewAllOpals />} />
           <Route path="/edit-opal/:opal_id" element={<EditOpal />} />
+          <Route path="/users" element={<ViewAllUsers />} />
         </Routes> 
 
         <Footer />

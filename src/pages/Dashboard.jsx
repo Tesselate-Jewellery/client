@@ -12,13 +12,17 @@ const Dashboard = () => {
         navigate('/opals')
     }
 
+    const handleViewAllUsers = () => {
+        navigate('/users')
+    }
+
     return (
         <div>
             <button onClick={handleViewAllOpals}>View All Opals</button>
             {showAdminDashboard && (
                 <div>
                     <button>Create New Opal</button>
-                    <button>View All Users</button>
+                    <button onClick={handleViewAllUsers}>View All Users</button>
                     <button>View All Quotes</button>
                 </div>
             )}
