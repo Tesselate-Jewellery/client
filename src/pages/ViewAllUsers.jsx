@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 const LoadingIndicator = () => <p>Loading...</p>;
 
 const UserDetails = ({ user, onDelete }) => {
+
     const handleDeleteClick = () => {
         // Call the onDelete function passed from the parent component
         onDelete(user._id);

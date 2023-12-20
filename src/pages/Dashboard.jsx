@@ -17,6 +17,10 @@ const Dashboard = () => {
         navigate('/users')
     }
 
+    const handleCreateNewOpal = () => {
+        navigate('/create-new-opal')
+    }
+
     return (
         <div>
             <button>Edit Profile</button>
@@ -25,7 +29,7 @@ const Dashboard = () => {
             )}
             {showAdminDashboard && (
                 <div>
-                    <button>Create New Opal</button>
+                    <button onClick={handleCreateNewOpal}>Create New Opal</button>
                     <button onClick={handleViewAllUsers}>View All Users</button>
                     <button>View All Quotes</button>
                 </div>
