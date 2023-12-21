@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 test('renders navigation links', () => {
     render(
         <Router>
-        <NavBar />
+            <NavBar />
         </Router>
     );
 

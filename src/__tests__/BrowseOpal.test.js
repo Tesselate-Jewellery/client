@@ -7,30 +7,30 @@ import { useAuth } from '../utils/AuthContext';
 
 // Mock the useAuth hook
 jest.mock('../utils/AuthContext', () => ({
-    useAuth: jest.fn(),
+  useAuth: jest.fn(),
 }));
 
 // Mock axios for API calls
 jest.mock('axios');
 
 describe('BrowseOpal Component', () => {
-    // Helper function to render the component
-    const renderComponent = () => {
-      // Mock the useAuth hook to return the mocked context values
-      useAuth.mockReturnValue({ jwt: 'mockedJWT' });
+  // Helper function to render the component
+  const renderComponent = () => {
+    // Mock the useAuth hook to return the mocked context values
+    useAuth.mockReturnValue({ jwt: 'mockedJWT' });
 
     // Mock the axios.get method to return data for the opal
     axios.get.mockResolvedValue({
-          data: {
-          name: 'Mocked Opal',
-          image: 'path/to/image.jpg',
-          origin: 'Mocked Origin',
-          weight: 'Mocked Weight',
-          dimensions: 'Mocked Dimensions',
-          brightness: 'Mocked Brightness',
-          tone: 'Mocked Tone',
-          pricing: 100, // Mocked pricing value
-        },
+      data: {
+        name: 'Mocked Opal',
+        image: 'path/to/image.jpg',
+        origin: 'Mocked Origin',
+        weight: 'Mocked Weight',
+        dimensions: 'Mocked Dimensions',
+        brightness: 'Mocked Brightness',
+        tone: 'Mocked Tone',
+        pricing: 100, // Mocked pricing value
+      },
     });
 
     render(
