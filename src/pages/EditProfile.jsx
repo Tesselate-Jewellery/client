@@ -5,6 +5,7 @@ import { useAuth } from '../utils/AuthContext';
 import { ToastContainer, toast } from "react-toastify";
 
 const EditUser = () => {
+    const { setAuthenticated } = useAuth();
     const { user_id } = useParams();
     const { jwt } = useAuth();
     const navigate = useNavigate();
@@ -85,7 +86,9 @@ const EditUser = () => {
                     },
                 }
             );
-            toast.success("User Edited Successfully");
+            toast.success("User Edited Successfully! Please Log In again");
+            setAuthenticated({ jwt: '', role: '', userID: '' });
+            navigate("/login")
         } catch (error) {
             console.error('Error saving user data:', error);
         }
