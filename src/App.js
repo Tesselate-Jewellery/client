@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import About from './pages/About';
+import Faq from './pages/Faq';
+import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard';
 import ViewAllOpals from './pages/ViewAllOpals';
 import ViewAllUsers from './pages/ViewAllUsers';
@@ -43,6 +46,9 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/browse-opal/:opal_id" element={<BrowseOpal />} />
           <Route path="/thank-you/:calculatedPrice/:opalName" element={<QuotePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes> 
 
         <Footer />
