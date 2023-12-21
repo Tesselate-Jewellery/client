@@ -55,4 +55,18 @@ describe('BrowseOpal Component', () => {
     const elementsWithPrice = screen.queryAllByText('$100');
     expect(elementsWithPrice.length).toBeGreaterThan(1); 
   });
+
+
+  test('When "Send Quote" button on click, expect a POST response to be called', async () => {
+    renderComponent();
+
+    // Mock the axios.post method to return a successful response when sending a quote
+    const axiosPostMock = jest.spyOn(axios, 'post').mockResolvedValue({});
+
+    // Click the "Send Quote" button
+    fireEvent.click(screen.getByText('Send Quote'));
+
+    // Check if the axios.post mock function was called
+    expect(axiosPostMock).toHaveBeenCalled();
+  });
 });
