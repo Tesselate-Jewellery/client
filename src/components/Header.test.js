@@ -5,8 +5,11 @@ import { useAuth } from '../utils/AuthContext';
 
 // Mock the useAuth hook
 jest.mock('../utils/AuthContext', () => ({
-    useAuth: jest.fn(),
-    }));
+    useAuth: jest.fn(() => ({
+      jwt: 'mockedJWT',
+      setAuthenticated: jest.fn(),
+    })),
+  }));
 
 describe('Header Component', () => {
     test('renders "Logout" when JWT is present', () => {
