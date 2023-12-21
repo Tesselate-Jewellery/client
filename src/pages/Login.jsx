@@ -77,15 +77,9 @@ const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
             />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
         <span>
             Already have an account? <Link to={"/signup"}>Signup</Link>
-        </span>
-        <span>
-            See jwt <Link to={"/example"}>Example</Link>
-        </span>
-        <span>
-            Check Protected Route <Link to={"/protected"}>Protected</Link>
         </span>
         </form>
         <ToastContainer />
@@ -93,4 +87,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default Login;
