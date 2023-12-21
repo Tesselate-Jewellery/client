@@ -81,12 +81,6 @@ const Login = () => {
         <span>
             Already have an account? <Link to={"/signup"}>Signup</Link>
         </span>
-        <span>
-            See jwt <Link to={"/example"}>Example</Link>
-        </span>
-        <span>
-            Check Protected Route <Link to={"/protected"}>Protected</Link>
-        </span>
         </form>
         <ToastContainer />
     </div>

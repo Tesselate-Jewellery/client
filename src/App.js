@@ -14,11 +14,11 @@ import ViewAllQuotes from './pages/ViewAllQuotes';
 import EditUser from './pages/EditProfile';
 import EditOpal from './pages/EditOpal';
 import CreateNewOpal from './pages/CreateNewOpal';
+import Gallery from './pages/Gallery';
+import BrowseOpal from './pages/BrowseOpal';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ExampleComponent from './pages/ExampleComponent';
-import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
@@ -32,8 +32,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/example" element={<ExampleComponent />} />
-          <Route path="/protected" element={<ProtectedRoute />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/opals" element={<ViewAllOpals />} />
           <Route path="/edit-opal/:opal_id" element={<EditOpal />} />
@@ -41,6 +39,8 @@ function App() {
           <Route path="/users" element={<ViewAllUsers />} />
           <Route path="/edit-profile/:user_id" element={<EditUser />} />
           <Route path="/quotes" element={<ViewAllQuotes />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/browse-opal/:opal_id" element={<BrowseOpal />} />
         </Routes> 
 
         <Footer />
