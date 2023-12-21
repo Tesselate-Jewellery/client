@@ -35,14 +35,15 @@ const QuoteDetails = ({ quote, onDelete }) => {
         const fetchOpalName = async () => {
             try {
                 // console.log('Fetching opal name for ID:', quote.opal);
-                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}opals/${quote.opal}`, {
+                let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}opals/${quote.opal}`, {
                     headers: {
                         jwt: jwt,
                     },
                 });
 
                 // console.log(quote.opal);
-                // console.log('Opal Response:', response.data);  
+                // console.log('Opal Response:', response.data); 
+                setOpalName(response.data.name) 
             } catch (error) {
                 console.error('Error fetching opal name', error);
             }

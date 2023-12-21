@@ -11,7 +11,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
   
     async function login_user() {
-        console.log(email, password);
+        // console.log(email, password);
         try {
           let result = await axios.post(
             process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
@@ -22,13 +22,10 @@ const Login = () => {
           );
       
           let data = await result.data;
-          console.log(data);
+          // console.log(data);
       
           // Assuming data contains jwt and role ID
           const { jwt, role: roleId, userID } = data;
-
-          console.log(`THE ROLE ID IS: ${roleId}`);
-          console.log(`THE USER ID IS: ${userID}`)
       
           // Fetch role details based on role ID
           const rolesResponse = await fetch(process.env.REACT_APP_BACKEND_URL + "roles");
