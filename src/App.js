@@ -16,6 +16,7 @@ import EditOpal from './pages/EditOpal';
 import CreateNewOpal from './pages/CreateNewOpal';
 import Gallery from './pages/Gallery';
 import BrowseOpal from './pages/BrowseOpal';
+import QuotePage from './pages/QuotePage';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -41,6 +42,7 @@ function App() {
           <Route path="/quotes" element={<ViewAllQuotes />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/browse-opal/:opal_id" element={<BrowseOpal />} />
+          <Route path="/thank-you/:calculatedPrice/:opalName" element={<QuotePage />} />
         </Routes> 
 
         <Footer />

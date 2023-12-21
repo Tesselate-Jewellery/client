@@ -77,7 +77,7 @@ const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
             />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
         <span>
             Already have an account? <Link to={"/signup"}>Signup</Link>
         </span>
@@ -87,4 +87,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default Login;
