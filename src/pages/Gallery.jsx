@@ -55,7 +55,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <h1>Opals</h1>
+            <h2>Opals</h2>
             {isLoading ? <LoadingIndicator /> : renderOpals(opalsData)}
         </div>
     );
