@@ -10,7 +10,7 @@ const Signup = () => {
     const [username, setUsername] = useState("");
 
     async function signup_user(){
-        console.log(email, password);
+        // console.log(email, password);
         try{
             await axios.post(
                 process.env.REACT_APP_BACKEND_URL + "users/sign-up",

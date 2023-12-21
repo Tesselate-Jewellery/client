@@ -37,7 +37,7 @@ const ViewAllUsers = () => {
             },
             });
 
-            console.log(response.data);
+            // console.log(response.data);
             setUserData(response.data.usersArray);
         } catch (error) {
             console.error('Error fetching data:', error);

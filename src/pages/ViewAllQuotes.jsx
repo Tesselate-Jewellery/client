@@ -17,15 +17,15 @@ const QuoteDetails = ({ quote, onDelete }) => {
     useEffect(() => {
         const fetchUsername = async () => {
             try {
-                console.log('Fetching username for ID:', quote.createdBy);
+                // console.log('Fetching username for ID:', quote.createdBy);
                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}users/${quote.createdBy}`, {
                     headers: {
                         jwt: jwt,
                     },
                 });
 
-                console.log(quote.createdBy);
-                console.log('User Response:', response.data);  // Log the entire response
+                // console.log(quote.createdBy);
+                // console.log('User Response:', response.data);  
                 setCreatedByUsername(response.data.username);
             } catch (error) {
                 console.error('Error fetching username', error);
@@ -34,16 +34,15 @@ const QuoteDetails = ({ quote, onDelete }) => {
 
         const fetchOpalName = async () => {
             try {
-                console.log('Fetching opal name for ID:', quote.opal);
+                // console.log('Fetching opal name for ID:', quote.opal);
                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}opals/${quote.opal}`, {
                     headers: {
                         jwt: jwt,
                     },
                 });
 
-                console.log(quote.opal);
-                console.log('Opal Response:', response.data);  // Log the entire response
-                setOpalName(response.data.name);
+                // console.log(quote.opal);
+                // console.log('Opal Response:', response.data);  
             } catch (error) {
                 console.error('Error fetching opal name', error);
             }
@@ -83,7 +82,7 @@ const ViewAllQuotes = () => {
             },
             });
 
-            console.log(response.data);
+            // console.log(response.data);
             setQuotesData(response.data.quotesArray);
         } catch (error) {
             console.error('Error fetching data:', error);

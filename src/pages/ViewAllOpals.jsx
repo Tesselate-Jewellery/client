@@ -43,7 +43,7 @@ const ViewAllOpals = () => {
                     },
                 });
 
-                console.log(response.data);
+                // console.log(response.data);
                 setOpalsData(response.data.opalsArray);
 
             } catch (error) {
