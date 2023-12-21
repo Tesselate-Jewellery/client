@@ -3,14 +3,14 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRou
 import NavBar from './NavBar';
 
 test('renders navigation links', () => {
-  render(
-    <Router>
-      <NavBar />
-    </Router>
-  );
+    render(
+        <Router>
+        <NavBar />
+        </Router>
+    );
 
-  expect(screen.getByText(/about/i)).toBeInTheDocument();
-  expect(screen.getByText(/gallery/i)).toBeInTheDocument();
-  expect(screen.getByText(/faq/i)).toBeInTheDocument();
-  expect(screen.getByText(/contact us/i)).toBeInTheDocument();
+    expect(screen.getByText(/about/i)).toBeInTheDocument();
+    expect(screen.getByText(/gallery/i)).toBeInTheDocument();
+    expect(screen.getByText(/faq/i)).toBeInTheDocument();
+    expect(screen.getByText(/contact us/i)).toBeInTheDocument();
 });
