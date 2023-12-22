@@ -1,0 +1,11 @@
+.contact-text{
+    font-family: "Playfair display";
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+p {
+    margin: 40px;
+    font-size: 1.3rem;
+}

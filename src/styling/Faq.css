@@ -8,7 +8,7 @@ h2 {
     margin-bottom: 50px;
 }
 
-h3 {
+.faq-header {
     font-size: 1.3rem;
     display: inline-block; 
     border: 2px solid;
