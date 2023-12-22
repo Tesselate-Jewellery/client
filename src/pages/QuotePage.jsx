@@ -8,7 +8,7 @@ const QuotePage = () => {
         <div>
             <h2>Thank you for your interest!</h2>
             <p>
-                Your quote of ${calculatedPrice} for the {opalName} opal has been sent to{' '}
+                Your quote of ${calculatedPrice} for the {opalName} has been sent to{' '}
                 <strong>tesselatejewellery@gmail.com</strong>. We will get back to you within 10 business days.
             </p>
         </div>
