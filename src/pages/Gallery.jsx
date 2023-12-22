@@ -42,7 +42,7 @@ const Gallery = () => {
         return (
             <div key={opal._id}>
                 <h2>{opal.name}</h2>
-                <h3>{opal.image}</h3>
+                <img src={opal.image} alt={`Opal named ${opal.name}`}/>
                 <h3>{opal.origin}</h3>
                 <h3>From: ${opal.pricing}</h3>
                 <button onClick={() => handleSeeMoreClick(opal._id)}>See More</button>
