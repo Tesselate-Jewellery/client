@@ -4,12 +4,12 @@ import { MemoryRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 
 describe('Home Component', () => {
-  test('renders Browse Section', () => {
-    render(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>
-    );
+    test('renders Browse Section', () => {
+        render(
+            <MemoryRouter>
+                <Home />
+            </MemoryRouter>
+        );
 
     // Check if Browse Section is rendered
     expect(screen.getByText(/Locally sourced Australian Opals/i)).toBeInTheDocument();
@@ -17,11 +17,11 @@ describe('Home Component', () => {
   });
 
   test('renders Meet Your Makers Section', () => {
-    render(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>
-    );
+        render(
+            <MemoryRouter>
+                <Home />
+            </MemoryRouter>
+        );
 
     // Check if Meet Your Makers Section is rendered
     expect(screen.getByText(/Meet Your Makers/i)).toBeInTheDocument();
