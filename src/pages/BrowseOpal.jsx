@@ -121,7 +121,7 @@ const BrowseOpal = () => {
     return (
         <div>
             <h1>{opalData.name}</h1>
-            <p><strong>Image:</strong> {opalData.image}</p>
+            <img src={opalData.image} alt={`Opal named ${opalData.name}`}/>
             <p><strong>Origin:</strong> {opalData.origin}</p>
             <p><strong>Weight:</strong> {opalData.weight}</p>
             <p><strong>Dimensions:</strong> {opalData.dimensions}</p>
