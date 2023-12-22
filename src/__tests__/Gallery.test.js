@@ -7,6 +7,7 @@ import Gallery from '../pages/Gallery';
 
 const mockAxios = new MockAdapter(axios);
 
+// Mock data
 const mockOpalsData = [
     {
         _id: '1',

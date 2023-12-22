@@ -18,6 +18,7 @@ describe('QuotePage component', () => {
         </MemoryRouter>
     );
 
+    // Write strings of expected text to be on page
     const thankYouHeader = screen.getByText(/Thank you for your interest!/i);
     const priceText = screen.getByText(new RegExp(`Your quote of \\$${calculatedPrice} for the ${opalName} has been sent to`));
     const emailText = screen.getByText(/tesselatejewellery@gmail.com/i);

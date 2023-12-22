@@ -8,7 +8,8 @@ test('renders navigation links', () => {
             <NavBar />
         </Router>
     );
-
+    
+    // Expect these text strings to be in document
     expect(screen.getByText(/about/i)).toBeInTheDocument();
     expect(screen.getByText(/gallery/i)).toBeInTheDocument();
     expect(screen.getByText(/faq/i)).toBeInTheDocument();
