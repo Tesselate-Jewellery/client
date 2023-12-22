@@ -57,56 +57,56 @@ const EditOpal = () => {
     return (
         <div>
             <h1>Edit Opal</h1>
-            <label>Name:</label>
+            <label htmlFor="name">Name:</label>
             <input
                 type="text"
                 name="name"
                 value={opalData.name || ''}
                 onChange={handleInputChange}
             />
-            <label>Image:</label>
+            <label htmlFor="image">Image:</label>
             <input
                 type="text"
                 name="image"
                 value={opalData.image || ''}
                 onChange={handleInputChange}
             />
-            <label>Origin:</label>
+            <label htmlFor="origin">Origin:</label>
             <input
                 type="text"
                 name="origin"
                 value={opalData.origin || ''}
                 onChange={handleInputChange}
             />
-            <label>Weight:</label>
+            <label htmlFor="weight">Weight:</label>
             <input
                 type="number"
                 name="weight"
                 value={opalData.weight || ''}
                 onChange={handleInputChange}
             />
-            <label>Dimensions:</label>
+            <label htmlFor="dimensions">Dimensions:</label>
             <input
                 type="text"
                 name="dimensions"
                 value={opalData.dimensions || ''}
                 onChange={handleInputChange}
             />
-            <label>Brightness:</label>
+            <label htmlFor="brightness">Brightness:</label>
             <input
                 type="text"
                 name="brightness"
                 value={opalData.brightness || ''}
                 onChange={handleInputChange}
             />
-            <label>Tone:</label>
+            <label htmlFor="tone">Tone:</label>
             <input
                 type="text"
                 name="tone"
                 value={opalData.tone || ''}
                 onChange={handleInputChange}
             />
-            <label>Pricing:</label>
+            <label htmlFor="pricing">Pricing:</label>
             <input
                 type="number"
                 name="pricing"

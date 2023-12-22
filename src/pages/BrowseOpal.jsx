@@ -39,11 +39,11 @@ const BrowseOpal = () => {
         // For simplicity, let's assume an additional $50 for 9ct Gold and $100 for 18ct Gold
         let additionalPrice = 0;
         if (metal === 'Silver') {
-            additionalPrice = 50;
-        } else if (metal === '9ct Gold') {
-            additionalPrice = 100;
-        } else if (metal === '18ct Gold') {
             additionalPrice = 200;
+        } else if (metal === '9ct Gold') {
+            additionalPrice = 600;
+        } else if (metal === '18ct Gold') {
+            additionalPrice = 1200;
         } else if (metal === '') {
             additionalPrice = 0;
         }
@@ -60,7 +60,7 @@ const BrowseOpal = () => {
         if (setting === 'bezel') {
             additionalPrice = 100;
         } else if (setting === 'claw') {
-            additionalPrice = 200;
+            additionalPrice = 250;
         } else if (setting === '') {
             additionalPrice = 0;
         }

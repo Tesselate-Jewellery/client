@@ -31,7 +31,7 @@ const Signup = () => {
 
     return (
         <div className="form_container">
-            <h2>Signup Account</h2>
+            <h2>Sign Up Account</h2>
             <form onSubmit={(event) => {event.preventDefault(); signup_user(); }}>
             <div>
                 <label htmlFor="email">Email</label>
@@ -73,4 +73,4 @@ const Signup = () => {
     );
 };
 
-export default Signup
+export default Signup;

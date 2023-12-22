@@ -43,24 +43,66 @@ const CreateNewOpal = () => {
     return (
         <div>
             <h1>Create New Opal</h1>
-            <label>Name:</label>
-            <input type="text" name="name" value={newOpal.name} onChange={handleInputChange} />
-            <label>Image:</label>
-            <input type="text" name="image" value={newOpal.image} onChange={handleInputChange} />
-            <label>Origin:</label>
-            <input type="text" name="origin" value={newOpal.origin} onChange={handleInputChange} />
-            <label>Weight:</label>
-            <input type="number" name="weight" value={newOpal.weight} onChange={handleInputChange} />
-            <label>Dimensions:</label>
-            <input type="text" name="dimensions" value={newOpal.dimensions} onChange={handleInputChange} />
-            <label>Brightness:</label>
-            <input type="text" name="brightness" value={newOpal.brightness} onChange={handleInputChange} />
-            <label>Tone:</label>
-            <input type="text" name="tone" value={newOpal.tone} onChange={handleInputChange} />
-            <label>Pricing:</label>
-            <input type="number" name="pricing" value={newOpal.pricing} onChange={handleInputChange} />
+            <label htmlFor="name">Name:</label>
+            <input 
+            type="text" 
+            name="name" 
+            value={newOpal.name} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="image">Image:</label>
+            <input 
+            type="text" 
+            name="image" 
+            value={newOpal.image} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="origin">Origin:</label>
+            <input 
+            type="text" 
+            name="origin" 
+            value={newOpal.origin} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="weight">Weight:</label>
+            <input 
+            type="number" 
+            name="weight" 
+            value={newOpal.weight}
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="dimensions">Dimensions:</label>
+            <input 
+            type="text" 
+            name="dimensions" 
+            value={newOpal.dimensions} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="brightness">Brightness:</label>
+            <input 
+            type="text" 
+            name="brightness" 
+            value={newOpal.brightness} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="tone">Tone:</label>
+            <input 
+            type="text" 
+            name="tone" 
+            value={newOpal.tone} 
+            onChange={handleInputChange} 
+            />
+            <label htmlFor="pricing">Pricing:</label>
+            <input 
+            type="number" 
+            name="pricing" 
+            value={newOpal.pricing} 
+            onChange={handleInputChange} 
+            />
             
-            <button onClick={handleCreateOpal}>Create New Opal</button>
+            <button onClick={handleCreateOpal}>
+              Create New Opal
+            </button>
         
         </div>
     );
