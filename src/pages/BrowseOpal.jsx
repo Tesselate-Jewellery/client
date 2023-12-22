@@ -19,9 +19,11 @@ const BrowseOpal = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                // Make GET request
                 const response = await axios.get(
                     `${process.env.REACT_APP_BACKEND_URL}opals/${opal_id}`
                 );
+                // set state with response.data
                 setOpalData(response.data);
 
                 // Update calculatedPrice once opal data is fetched
@@ -48,8 +50,11 @@ const BrowseOpal = () => {
             additionalPrice = 0;
         }
 
+        // Set selected metal to state
         setSelectedMetal(metal);
+        // Depending on option chosen, set price to state
         setMetalAdditionalPrice(additionalPrice);
+        // Calculate total price
         setCalculatedPrice(opalData.pricing + additionalPrice + settingAdditionalPrice);
     };
 
@@ -66,7 +71,9 @@ const BrowseOpal = () => {
         }
 
         setSelectedSetting(setting);
+        // Set the price of the setting to state
         setSettingAdditionalPrice(additionalPrice);
+        // Calculate total quote price
         setCalculatedPrice(opalData.pricing + metalAdditionalPrice + additionalPrice);
     };
 

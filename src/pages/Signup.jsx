@@ -12,6 +12,7 @@ const Signup = () => {
     async function signup_user(){
         // console.log(email, password);
         try{
+            // Make POST request 
             await axios.post(
                 process.env.REACT_APP_BACKEND_URL + "users/sign-up",
                 {
@@ -20,6 +21,7 @@ const Signup = () => {
                     username
                 });
             
+            // Once user signs up, navigate to login page
             navigate("/login");
             toast.success("New user created!");
 

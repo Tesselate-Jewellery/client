@@ -13,6 +13,7 @@ const Login = () => {
     async function login_user() {
         // console.log(email, password);
         try {
+          // Make POST request
           let result = await axios.post(
             process.env.REACT_APP_BACKEND_URL + "users/sign-in", 
             {
@@ -30,6 +31,8 @@ const Login = () => {
           // Fetch role details based on role ID
           const rolesResponse = await fetch(process.env.REACT_APP_BACKEND_URL + "roles");
           const rolesResult = await rolesResponse.json();
+          // Takes the role id and matches it to the name (i.e. "admin, "staff", "user")
+          // Easier to render components on role names 
           const matchingRole = rolesResult.data.find(role => role._id === roleId);
       
           if (matchingRole) {

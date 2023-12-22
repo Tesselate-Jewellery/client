@@ -31,6 +31,7 @@ const ViewAllUsers = () => {
         try {
             setIsLoading(true);
 
+            // Make GET request
             const response = await axios.get(process.env.REACT_APP_BACKEND_URL + 'users', {
             headers: {
                 jwt: jwt,
@@ -74,6 +75,7 @@ const ViewAllUsers = () => {
     );
 };
 
+// Populate list of users
 const renderUsers = (usersData, onDelete) => {
     if (Array.isArray(usersData) && usersData.length > 0) {
         return usersData.map((user) => <UserDetails key={user._id} user={user} onDelete={onDelete} />);

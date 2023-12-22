@@ -19,6 +19,7 @@ const EditUser = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                // Make GET request
                 const response = await axios.get(
                     `${process.env.REACT_APP_BACKEND_URL}users/${user_id}`,
                     {
@@ -77,6 +78,7 @@ const EditUser = () => {
                 return;
             }
 
+            // Make PUT request
             await axios.put(
                 `${process.env.REACT_APP_BACKEND_URL}users/${user_id}`,
                 { username, email, password }, 
@@ -87,7 +89,9 @@ const EditUser = () => {
                 }
             );
             toast.success("User Edited Successfully! Please Log In again");
+            // When a user is edited, clear the jwt, role and user ID
             setAuthenticated({ jwt: '', role: '', userID: '' });
+            // Navigate back to login page
             navigate("/login")
         } catch (error) {
             console.error('Error saving user data:', error);

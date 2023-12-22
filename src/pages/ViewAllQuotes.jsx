@@ -10,6 +10,7 @@ const QuoteDetails = ({ quote, onDelete }) => {
     const [createdByUsername, setCreatedByUsername] = useState('');
     const [opalName, setOpalName] = useState('');
 
+    // invokes onDelete passing quote._id as argument
     const handleDeleteClick = () => {
         onDelete(quote._id);
     };
@@ -18,6 +19,7 @@ const QuoteDetails = ({ quote, onDelete }) => {
         const fetchUsername = async () => {
             try {
                 // console.log('Fetching username for ID:', quote.createdBy);
+                // Make GET request
                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}users/${quote.createdBy}`, {
                     headers: {
                         jwt: jwt,
@@ -26,6 +28,7 @@ const QuoteDetails = ({ quote, onDelete }) => {
 
                 // console.log(quote.createdBy);
                 // console.log('User Response:', response.data);  
+                // Display just the username, rather than id
                 setCreatedByUsername(response.data.username);
             } catch (error) {
                 console.error('Error fetching username', error);
@@ -35,6 +38,7 @@ const QuoteDetails = ({ quote, onDelete }) => {
         const fetchOpalName = async () => {
             try {
                 // console.log('Fetching opal name for ID:', quote.opal);
+                // Make GET request
                 let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}opals/${quote.opal}`, {
                     headers: {
                         jwt: jwt,
@@ -42,7 +46,8 @@ const QuoteDetails = ({ quote, onDelete }) => {
                 });
 
                 // console.log(quote.opal);
-                // console.log('Opal Response:', response.data); 
+                // console.log('Opal Response:', response.data);
+                // Display the opal name, rather than id 
                 setOpalName(response.data.name) 
             } catch (error) {
                 console.error('Error fetching opal name', error);
@@ -55,7 +60,9 @@ const QuoteDetails = ({ quote, onDelete }) => {
 
     return (
         <div key={quote._id}>
+            {/* username state taken from fetchUsername */}
             <h2>{createdByUsername}</h2>
+            {/* opal name state taken from fetchOpalName */}
             <h3>{opalName}</h3>
             <h3>{quote.metal}</h3>
             <h3>{quote.setting}</h3>
@@ -77,6 +84,7 @@ const ViewAllQuotes = () => {
         try {
             setIsLoading(true);
 
+            // Make GET request
             const response = await axios.get(process.env.REACT_APP_BACKEND_URL + 'quotes', {
             headers: {
                 jwt: jwt,
@@ -120,6 +128,7 @@ const ViewAllQuotes = () => {
     );
 };
 
+// Populate all the quotes
 const renderQuotes = (quotesData, onDelete) => {
     if (Array.isArray(quotesData) && quotesData.length > 0) {
         return quotesData.map((quote) => <QuoteDetails key={quote._id} quote={quote} onDelete={onDelete} />);

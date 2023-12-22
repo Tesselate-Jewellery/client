@@ -13,6 +13,7 @@ const EditOpal = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                // Make GET request
                 const response = await axios.get(
                     `${process.env.REACT_APP_BACKEND_URL}opals/${opal_id}`,
                     {
@@ -30,16 +31,20 @@ const EditOpal = () => {
         fetchData();
     }, [opal_id, jwt]);
 
+    // Update state when input fields change
     const handleInputChange = (event) => {
         setOpalData({
+            // Spread operator, state should be immutable
             ...opalData,
             [event.target.name]: event.target.value,
         });
     };
 
+    // When "Save" button is clicked
     const handleSaveClick = async () => {
         try {
             await axios.put(
+                // Make PUT request
                 `${process.env.REACT_APP_BACKEND_URL}opals/${opal_id}`,
                 opalData,
                 {

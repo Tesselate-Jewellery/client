@@ -14,6 +14,7 @@ const OpalDetails = ({ opal, onDelete }) => {
     navigate(`/edit-opal/${opal._id}`);
   };
 
+  // Invokes onDelete passing opal._id as argument
   const handleDeleteClick = () => {
     onDelete(opal._id);
   };
@@ -42,8 +43,10 @@ const ViewAllOpals = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Set loading state
         setIsLoading(true);
 
+        // Make GET request
         const response = await axios.get(process.env.REACT_APP_BACKEND_URL + 'opals', {
           headers: {
             jwt: jwt,
@@ -66,13 +69,14 @@ const ViewAllOpals = () => {
   const handleDeleteOpal = async (opalId) => {
     try {
       console.log('Deleting opal:', opalId);
+      // Make DELETE request
       await axios.delete(`${process.env.REACT_APP_BACKEND_URL}opals/${opalId}`, {
         headers: {
           jwt: jwt,
         },
       });
   
-      // Filter out the deleted opals from the state
+      // Filter out the deleted opals from the state and display list without deleted opal
       setOpalsData((prevOpals) => prevOpals.filter((opal) => opal._id !== opalId));
       toast.success("Opal Successfully Removed!");
     } catch (error) {

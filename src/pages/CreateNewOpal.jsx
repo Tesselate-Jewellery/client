@@ -18,6 +18,7 @@ const CreateNewOpal = () => {
       pricing: '',
     });
 
+    // Update state of component when value of input field changes
     const handleInputChange = (event) => {
         setNewOpal({
           ...newOpal,
@@ -27,6 +28,7 @@ const CreateNewOpal = () => {
 
     const handleCreateOpal = async () => {
         try {
+          // Make POST request
             await axios.post(process.env.REACT_APP_BACKEND_URL + 'opals', newOpal, {
                 headers: {
                     jwt: jwt,
