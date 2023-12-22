@@ -22,7 +22,6 @@ describe('ViewAllUsers Component', () => {
         email: 'user1@example.com',
         username: 'user1',
       },
-      // Add more mock users as needed
     ];
 
     // Mock the Axios get request to return the mock data
@@ -37,7 +36,6 @@ describe('ViewAllUsers Component', () => {
     await waitFor(() => {
       expect(screen.getByText('user1@example.com')).toBeInTheDocument();
       expect(screen.getByText('user1')).toBeInTheDocument();
-      // You can add more assertions for other elements as needed
     });
   });
 });
