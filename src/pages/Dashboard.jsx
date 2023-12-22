@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuth } from '../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-
 const Dashboard = () => {
     const { role, userID } = useAuth();
     const navigate = useNavigate();
