@@ -14,9 +14,9 @@ const About = () => {
                     transformative journey, co-founding Tesselate Jewellery. 
                     Her unwavering commitment to quality, sustainability, and 
                     enduring craftsmanship shapes the essence of Tesselate. With a 
-                    rich background in the intricate art of jewelry making, Aisha's
+                    rich background in the intricate art of jewellery making, Aisha's
                     passion was kindled in her youth, inspired by the cultural treasures 
-                    of her heritage. Aisha's journey in the world of jewelry unfolded as she 
+                    of her heritage. Aisha's journey in the world of jewellery unfolded as she 
                     honed her skills over the past three decades, blending traditional 
                     craftsmanship with a contemporary touch. Drawing inspiration from her cultural 
                     roots, Aisha infuses each creation with a unique blend of heritage and modern 
@@ -37,7 +37,7 @@ const About = () => {
                     spirits who share her vision for creating masterpieces. Together, they 
                     breathe life into Tesselate Jewellery, crafting pieces that resonate with 
                     the soul. As the brand blossoms, Aisha remains steadfast in her pursuit of 
-                    creating not just jewelry but cherished heirlooms, each piece telling a story of 
+                    creating not just jewellery but cherished heirlooms, each piece telling a story of 
                     heritage, passion, and the timeless allure of Tesselate.
                 </p>
             </div>

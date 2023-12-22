@@ -4,7 +4,7 @@ import '../styling/Faq.css';
 const Faq = () => {
     return (
         <div className="faq-text">
-            <h2>Frequently Asked Questions</h2>
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
 
             <div>
                 <h3 className="faq-header">How can I acquire an opal piece?</h3>

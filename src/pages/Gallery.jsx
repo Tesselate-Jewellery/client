@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styling/Gallery.css'
 
-const LoadingIndicator = () => <p>Loading...</p>;
+const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const Gallery = () => {
     const navigate = useNavigate();
@@ -40,12 +40,12 @@ const Gallery = () => {
 
     const OpalDetails = ({ opal }) => {
         return (
-            <div key={opal._id}>
-                <h2>{opal.name}</h2>
-                <img src={opal.image} alt={`Opal named ${opal.name}`}/>
-                <h3>{opal.origin}</h3>
-                <h3>From: ${opal.pricing}</h3>
-                <button onClick={() => handleSeeMoreClick(opal._id)}>See More</button>
+            <div className="opal-card" key={opal._id}>
+                <h3 className="opal-name">{opal.name}</h3>
+                <img src={opal.image} alt={`Opal named ${opal.name}`} className="opal-image"/>
+                <p className="opal-text">{opal.origin}</p>
+                <p className="opal-text-price">From: <strong>${opal.pricing}</strong></p>
+                <button className="see-more-button" onClick={() => handleSeeMoreClick(opal._id)}>See More</button>
             </div>
         );
     };
@@ -53,17 +53,25 @@ const Gallery = () => {
     // Render the opals 
     const renderOpals = (opalsData) => {
         if (Array.isArray(opalsData) && opalsData.length > 0) {
-            return opalsData.map((opal) => <OpalDetails key={opal._id} opal={opal} />);
+            return (
+                <div className="opal-gallery">
+                    {opalsData.map((opal) => <OpalDetails key={opal._id} opal={opal} />)}
+                </div>
+            );
         } else {
-            return <p>No opals data available</p>;
+            return <p className="no-opals-message">No opals data available</p>;
         }
     };
 
     return (
         <div>
-            <h2>Opals</h2>
-            {/* If isLoading is true, displaying loading indicator, otherwise display opals */}
-            {isLoading ? <LoadingIndicator /> : renderOpals(opalsData)}
+            <div>
+                <h1 className="opal-title">OPAL GALLERY</h1>
+            </div>
+            <div>
+                {/* If isLoading is true, displaying loading indicator, otherwise display opals */}
+                {isLoading ? <LoadingIndicator /> : renderOpals(opalsData)}
+            </div>
         </div>
     );
 };
