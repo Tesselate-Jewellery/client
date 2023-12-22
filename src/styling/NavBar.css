@@ -12,13 +12,13 @@
 }
 
 .nav-container a {
-    text-decoration: none; /* Remove underline from hyperlinks */
-    color: #000; /* Set the default text color */
+    text-decoration: none; 
+    color: #000; 
     font-size: 1.75rem;
     padding: 10px;
 }
 
 .nav-container a:hover {
-    background-color: #ffb6c1; /* Pastel pink background color on hover */
-    color: #fff; /* White text color on hover */
+    background-color: #ffb6c1; 
+    color: #fff; 
 }

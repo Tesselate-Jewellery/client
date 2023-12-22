@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styling/Faq.css';
 
 const Faq = () => {
     return (
-        <div>
+        <div className="faq-text">
             <h2>Frequently Asked Questions</h2>
 
             <div>

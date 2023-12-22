@@ -26,11 +26,11 @@
     }
   
     .home-container button {
-        background-color: #ffb6c1; /* Pastel pink background color */
-        color: #fff; /* White text color */
+        background-color: #ffb6c1; 
+        color: #fff; 
         padding: 10px 20px;
         font-size: 1.8rem;
-        border: 2px solid #fff; /* White border */
+        border: 2px solid #fff; 
         cursor: pointer;
         font-family: "Playfair display";
     }
