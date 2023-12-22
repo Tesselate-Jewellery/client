@@ -7,15 +7,15 @@ import axios from 'axios';
 jest.mock('axios');
 
 describe('ViewAllUsers Component', () => {
-    test('renders users', async () => {
-        // Mock the useAuth hook to return the user role
-        jest.spyOn(require('../utils/AuthContext'), 'useAuth').mockImplementation(() => ({
-            role: 'admin', 
-            jwt: 'jwt',
-            userID: 'mockedUserID',
-        }));
+  test('renders users', async () => {
+    // Mock the useAuth hook to return the user role
+    jest.spyOn(require('../utils/AuthContext'), 'useAuth').mockImplementation(() => ({
+      role: 'admin', 
+      jwt: 'jwt',
+      userID: 'mockedUserID',
+    }));
 
-    // Mock the data expected from the API
+    // Mock the data you expect to receive from the API
     const mockUsersData = [
       {
         _id: '1',
