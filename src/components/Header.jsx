@@ -12,8 +12,8 @@ const Header = () => {
     const handleLogout = () => {
         // Set jwt and role to blank for logout
         setAuthenticated({ jwt: '', role: '', userID: '' });
-        toast.success("Successfully Logged Out!");
         navigate("/")
+        toast.success("Successfully Logged Out!");
     };
 
     return (
@@ -32,7 +32,7 @@ const Header = () => {
                 <div className="login-out-link">
                     {jwt ? (
                         // If user is logged in, show logout button
-                        <Link onClick={handleLogout}>Logout</Link>
+                        <Link to="/" onClick={handleLogout}>Logout</Link>
                     ) : (
                         // If user is not logged in, show login link
                         <Link to="/login" className="header-login-button">
