@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from '../utils/AuthContext';
+import '../styling/Login.css';
 
 const Login = () => {
     const { setAuthenticated } = useAuth();
@@ -54,33 +55,37 @@ const Login = () => {
       }
     
     return (
-    <div className="form_container">
-        <h2>Login Account</h2>
+    <div className="form-container">
+        <h2>ACCOUNT LOGIN</h2>
         <form onSubmit={(event) => {event.preventDefault(); login_user(); }}>
         <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="login-text">Email: </label>
             <input
             type="email"
             name="email"
             value={email}
             placeholder="Enter your email"
+            className="login-input"
             onChange={(event) => setEmail(event.target.value)}
             />
         </div>
         <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="login-text">Password: </label>
             <input
             type="password"
-            name="password"
+            name="password" 
             value={password}
             placeholder="Enter your password"
+            className="login-input"
             onChange={(event) => setPassword(event.target.value)}
             />
         </div>
-        <button type="submit">Login</button>
-        <span>
-            Already have an account? <Link to={"/signup"}>Signup</Link>
-        </span>
+        <div>
+          <button type="submit" className="login-button">Login</button>
+        </div>  
+        <div className="login-text">
+            Don't have an account? <Link to={"/signup"}>Signup</Link>
+        </div>
         </form>
         <ToastContainer />
     </div>

@@ -1,0 +1,48 @@
+.dashboard-title {
+    text-align: center;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.dashboard-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashboard-button {
+    background-color: #ffb6c1; 
+    color: #fff; 
+    padding: 10px 20px;
+    font-size: 1.8rem;
+    border: 2px solid #fff; 
+    cursor: pointer;
+    font-family: "Playfair Display", sans-serif;
+    margin: 10px; 
+}
+
+.dashboard-button:hover {
+    background-color: #fff; 
+    color: #ffb6c1; 
+    border: 2px solid #ffb6c1;
+}
+
+/* Media query for adjusting styles on smaller screens */
+@media screen and (max-width: 600px) {
+    .dashboard-button {
+        width: 100%; 
+        margin: 10px 0; 
+    }
+}
+
+/* When screen is larger than 600px */
+@media screen and (min-width: 600px) {
+    .dashboard-container {
+        margin-bottom: 15vh;
+    }
+}

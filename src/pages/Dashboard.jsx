@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import '../styling/Dashboard.css';
 
 const Dashboard = () => {
     const { role, userID } = useAuth();
@@ -39,17 +40,30 @@ const Dashboard = () => {
 
     return (
         <div>
-            <button onClick={handleEditProfile}>Edit Profile</button>
-            {showAdminAndStaffDashboard && (
-                <button onClick={handleViewAllOpals}>View All Opals</button>
-            )}
-            {showAdminDashboard && (
+            <h1 className="dashboard-title">WHAT WOULD YOU LIKE TO DO?</h1>
+            <div className="dashboard-container">  
                 <div>
-                    <button onClick={handleCreateNewOpal}>Create New Opal</button>
-                    <button onClick={handleViewAllUsers}>View All Users</button>
-                    <button onClick={handleViewAllQuotes}>View All Quotes</button>
+                    <button onClick={handleEditProfile} className="dashboard-button">Edit Profile</button>
                 </div>
-            )}
+                <div className="dashboard-button-container">
+                    {showAdminAndStaffDashboard && (
+                        <button onClick={handleViewAllOpals} className="dashboard-button">View All Opals</button>
+                    )}
+                    {showAdminDashboard && (
+                        <>
+                            <div>
+                                <button onClick={handleCreateNewOpal} className="dashboard-button">Create New Opal</button>
+                            </div>
+                            <div>
+                                <button onClick={handleViewAllUsers} className="dashboard-button">View All Users</button>
+                            </div>
+                            <div>
+                                <button onClick={handleViewAllQuotes} className="dashboard-button">View All Quotes</button>
+                            </div>
+                        </>
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
