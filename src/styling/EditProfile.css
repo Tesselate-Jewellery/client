@@ -1,0 +1,58 @@
+
+
+body {
+    font-family: "Playfair Display", sans-serif;
+}
+
+  /* Loading Indicator */
+  .loading-indicator {
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 3rem;
+    margin: 50px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-label {
+    font-size: 1.3rem;
+    font-family: "Playfair Display";
+    margin-bottom: 20px;
+}
+
+.profile-input {
+    font-size: 1.2rem;
+    font-family: "Playfair Display";
+    margin-bottom: 40px;
+}
+
+.profile-button {
+    background-color: #ffb6c1; 
+    color: #fff; 
+    padding: 10px 20px;
+    font-family: "Playfair Display";
+    font-size: 1.2rem;
+    border: 2px solid #fff; 
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s; 
+}
+
+.profile-button:hover {
+    background-color: #fff; 
+    color: #ffb6c1; 
+    border: 2px solid #ffb6c1;
+}

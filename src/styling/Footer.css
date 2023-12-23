@@ -1,0 +1,18 @@
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #f5f5dc; 
+    margin: 20px;
+}
+
+.brand{
+    font-family: "Playfair display";
+    font-size: 16px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 12px;
+    color: #333;
+    font-family: "Playfair display";
+}

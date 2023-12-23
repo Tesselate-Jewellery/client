@@ -6,11 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './utils/AuthContext';
 
-// Import components from pages
-// export {default as Login} from './pages/Login'
-// export {default as Signup} from './pages/Signup'
-// export {default as Home} from './pages/Home'
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

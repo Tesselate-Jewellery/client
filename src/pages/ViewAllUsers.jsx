@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../utils/AuthContext';
 import { toast } from "react-toastify";
+import '../styling/ViewAllUsers.css';
 
-const LoadingIndicator = () => <p>Loading...</p>;
+const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const UserDetails = ({ user, onDelete }) => {
 
@@ -13,11 +14,17 @@ const UserDetails = ({ user, onDelete }) => {
     };
 
     return (
-        <div key={user._id}>
-            <h2>{user.email}</h2>
-            <h2>{user.username}</h2>
-            <button onClick={handleDeleteClick}>Delete User</button>
-        </div>
+        <div key={user._id} className="user-container">
+            <div>
+                <p><strong>Username: </strong>{user.username}</p>
+            </div>
+            <div>
+                <p><strong>Email: </strong>{user.email}</p>
+            </div>
+            <div>
+                <button onClick={handleDeleteClick} className="user-container-button">Delete User</button>
+            </div>
+        </div>    
     );
 };
 
@@ -69,7 +76,7 @@ const ViewAllUsers = () => {
 
     return (
         <div>
-        <h1>Users</h1>
+        <h1>ALL USERS</h1>
         {isLoading ? <LoadingIndicator /> : renderUsers(usersData, handleDeleteUser)}
         </div>
     );

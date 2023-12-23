@@ -3,12 +3,16 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 import { ToastContainer, toast } from "react-toastify";
+import "../styling/EditProfile.css";
+
+const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const EditUser = () => {
     const { setAuthenticated } = useAuth();
     const { user_id } = useParams();
     const { jwt } = useAuth();
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
 
     // Separate states for non-sensitive fields
     const [username, setUsername] = useState('');
@@ -19,6 +23,7 @@ const EditUser = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setIsLoading(true)
                 // Make GET request
                 const response = await axios.get(
                     `${process.env.REACT_APP_BACKEND_URL}users/${user_id}`,
@@ -36,6 +41,8 @@ const EditUser = () => {
 
             } catch (error) {
                 console.error('Error fetching user data:', error);
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -71,6 +78,12 @@ const EditUser = () => {
                 return; // Stop the save process if there's an error
             }
 
+            // Password in edit must be minimum 6 characters
+            if (password.length < 6) {
+                toast.error("Password must be at least 6 characters long.");
+                return;
+            }
+
              // Check if passwords match
             if (password !== confirmPassword) {
                 // Display a toast error message
@@ -100,39 +113,59 @@ const EditUser = () => {
 
     return (
         <div>
-            <ToastContainer />
-            <h1>Edit Profile</h1>
-            <h2>Welcome {username}</h2>
-            <label>Username:</label>
-            <input
-                type="text"
-                name="username"
-                value={username}
-                onChange={handleInputChange}
-            />
-            <label>Email:</label>
-            <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleInputChange}
-            />
-            <label>Password:</label>
-            <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleInputChange}
-            />
-            <label>Confirm Password:</label>
-            <input
-                type="password"
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={handleInputChange}
-            />
-            <button onClick={handleSaveClick}>Save</button>
-            <button onClick={() => navigate('/dashboard')}>Go Back</button>
+            {isLoading ? <LoadingIndicator /> : (
+                <>
+                    <ToastContainer />
+                    <h1>EDIT PROFILE</h1>
+                    <h2>Welcome {username}</h2>
+                    <div className="profile-container">
+                        <div>
+                            <label className="profile-label">Username: </label>
+                            <input
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={handleInputChange}
+                                className="profile-input"
+                            />
+                        </div>
+                        <div>
+                            <label className="profile-label">Email: </label>
+                            <input
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={handleInputChange}
+                                className="profile-input"
+                            />
+                        </div>
+                        <div>
+                            <label className="profile-label">Password: </label>
+                            <input
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={handleInputChange}
+                                className="profile-input"
+                            />
+                        </div>
+                        <div>
+                            <label className="profile-label">Confirm Password: </label>
+                            <input
+                                type="password"
+                                name="confirmPassword"
+                                value={confirmPassword}
+                                onChange={handleInputChange}
+                                className="profile-input"
+                            />
+                        </div>
+                        <div>
+                            <button onClick={handleSaveClick} className="profile-button">Save</button>
+                            <button onClick={() => navigate('/dashboard')} className="profile-button">Go Back</button>
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };

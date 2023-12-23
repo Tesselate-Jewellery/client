@@ -1,0 +1,46 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for better visual appearance */
+}
+
+.header-image {
+    width: auto;
+    height: 30vh;
+    padding-top: 15px;
+}
+
+.header-links {
+    right: 0; /* Push the header-links to the right */
+    position: absolute;
+    margin: 40px;
+    margin-top: 12vh;
+    font-size: 20px;
+}
+
+.dashboard-link{
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 30px;
+    text-align: center;
+    font-family: "Playfair display";
+}
+
+.login-out-link{
+    border: 2px solid #000; 
+    padding: 10px;
+    margin: 30px;
+    text-align: center;
+    font-family: "Playfair display";
+}
+
+.header-links a {
+    text-decoration: none; /* Remove underline from hyperlinks */
+    color: #000; /* Set the default text color */
+    transition: text-decoration 0.3s ease; /* Add a smooth transition for the underline */
+}
+
+.header-links a:hover {
+    text-decoration: underline; /* Underline the text on hover */
+}

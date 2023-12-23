@@ -1,16 +1,17 @@
 import React from 'react';
+import '../styling/Footer.css'
 
 const Footer = () => {
     return (
         <footer>
-            <p>
-            Tesselate Jewellery
+            <p className="brand">
+            Tesselate Jewellery 
             </p>
             <p>
             Bespoke Opal Rings
             </p>
             <p>
-            Handcrafted with attention to the finest details.
+            Every piece is unique and handcrafted. 
             </p>
         </footer>       
     );

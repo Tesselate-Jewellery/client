@@ -3,11 +3,14 @@ import axios from 'axios';
 import { useAuth } from '../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import '../styling/ViewAllOpals.css';
 
-const LoadingIndicator = () => <p>Loading...</p>;
+const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const OpalDetails = ({ opal, onDelete }) => {
+  const { role } = useAuth();
   const navigate = useNavigate();
+  const showAdminDashboard = ["admin"].includes(role);
 
   const handleEditClick = () => {
     // Navigate to the edit page with the opal ID as a parameter
@@ -20,17 +23,20 @@ const OpalDetails = ({ opal, onDelete }) => {
   };
 
   return (
-    <div key={opal._id}>
-      <h2>{opal.name}</h2>
-      <h3>{opal.image}</h3>
-      <h3>{opal.origin}</h3>
-      <h3>{opal.weight}</h3>
-      <h3>{opal.dimensions}</h3>
-      <h3>{opal.brightness}</h3>
-      <h3>{opal.tone}</h3>
-      <h3>{opal.pricing}</h3>
-      <button onClick={handleEditClick}>Edit</button>
-      <button onClick={handleDeleteClick}>Delete</button>
+    <div className="dash-opal-container" key={opal._id}>
+      <p className="dash-opal-name">{opal.name}</p>
+      <img src={opal.image} alt={`Opal named ${opal.name}`} className="dash-opal-img"/>
+      <p className="dash-opal-text">{opal.origin}</p>
+      <p className="dash-opal-text"><strong>Weight:</strong> {opal.weight}</p>
+      <p className="dash-opal-text"><strong>Dimensions:</strong> {opal.dimensions}</p>
+      <p className="dash-opal-text"><strong>Brightness:</strong> {opal.brightness}</p>
+      <p className="dash-opal-text"><strong>Tone:</strong> {opal.tone}</p>
+      <p className="dash-opal-text"><strong>Price:</strong> {opal.pricing}</p>
+      <button onClick={handleEditClick} className="dash-opal-button">Edit</button>
+      {/* Only show delete button to Admin */}
+      {showAdminDashboard && (
+      <button onClick={handleDeleteClick} className="dash-opal-button">Delete</button>
+      )}
     </div>
   );
 };
@@ -86,8 +92,8 @@ const ViewAllOpals = () => {
 
   return (
     <div>
-      <h1>Opals</h1>
-      {isLoading ? <LoadingIndicator /> : renderOpals(opalsData, handleDeleteOpal)}
+      <h1>LIST OF ALL OPALS</h1>
+      <div className="opal-gallery">{isLoading ? <LoadingIndicator /> : renderOpals(opalsData, handleDeleteOpal)}</div>
     </div>
   );
 };

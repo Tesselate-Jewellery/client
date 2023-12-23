@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../utils/AuthContext';
 import { toast } from 'react-toastify';
+import '../styling/ViewAllQuotes.css';
 
-const LoadingIndicator = () => <p>Loading...</p>;
+const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const QuoteDetails = ({ quote, onDelete }) => {
     const { jwt } = useAuth();
@@ -32,7 +33,7 @@ const QuoteDetails = ({ quote, onDelete }) => {
                 setCreatedByUsername(response.data.username);
             } catch (error) {
                 console.error('Error fetching username', error);
-            }
+            } 
         };
 
         const fetchOpalName = async () => {
@@ -59,17 +60,33 @@ const QuoteDetails = ({ quote, onDelete }) => {
     }, [jwt, quote.createdBy, quote.opal]);
 
     return (
-        <div key={quote._id}>
+        <div key={quote._id} className="quote-container">
             {/* username state taken from fetchUsername */}
-            <h2>{createdByUsername}</h2>
-            {/* opal name state taken from fetchOpalName */}
-            <h3>{opalName}</h3>
-            <h3>{quote.metal}</h3>
-            <h3>{quote.setting}</h3>
-            <h3>{quote.ringSize}</h3>
-            <h3>{quote.pricing}</h3>
-            <h3>{quote.createdAt}</h3>
-            <button onClick={handleDeleteClick}>Delete Quote</button>
+            <div>
+                <p>{createdByUsername}</p>
+            </div>
+            <div>
+                {/* opal name state taken from fetchOpalName */}
+                <p><strong>Name: </strong>{opalName}</p>
+            </div>
+            <div>
+                <p><strong>Metal: </strong>{quote.metal}</p>
+            </div>
+            <div>
+                <p><strong>Setting: </strong>{quote.setting}</p>
+            </div>
+            <div>
+                <p><strong>Ring Size: </strong>{quote.ringSize}</p>
+            </div>
+            <div>
+                <p><strong>Price: </strong>{quote.pricing}</p>
+            </div>
+            <div>
+                <p><strong>Date: </strong>{quote.createdAt}</p>
+            </div>
+            <div>
+                <button onClick={handleDeleteClick} className="quote-button">Delete</button>
+            </div>
         </div>
     );
 };

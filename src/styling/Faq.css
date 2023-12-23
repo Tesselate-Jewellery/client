@@ -1,0 +1,26 @@
+.faq-text{
+    font-family: "Playfair display";
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.faq-header {
+    font-size: 1.3rem;
+    display: inline-block; 
+    border: 2px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px; 
+    margin-bottom: 20px; 
+    background-color: #ffb6c1;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
