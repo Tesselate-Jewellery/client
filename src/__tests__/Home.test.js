@@ -24,7 +24,7 @@ describe('Home Component', () => {
         );
 
     // Check if Meet Your Makers Section is rendered
-    expect(screen.getByText(/Meet Your Makers/i)).toBeInTheDocument();
+    expect(screen.getByText(/Meet Aisha/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Learn More/i })).toBeInTheDocument();
   });
 });
