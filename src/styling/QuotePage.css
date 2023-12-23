@@ -1,0 +1,12 @@
+body {
+    font-family: "Playfair Display";
+}
+
+.quote-thankyou {
+    text-align: center;
+}
+
+.quote-text {
+    text-align: center;
+    margin-bottom: 20vh;
+}
