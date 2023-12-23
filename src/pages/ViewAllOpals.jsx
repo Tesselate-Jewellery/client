@@ -8,7 +8,9 @@ import '../styling/ViewAllOpals.css';
 const LoadingIndicator = () => <p className="loading-indicator">Loading...</p>;
 
 const OpalDetails = ({ opal, onDelete }) => {
+  const { role } = useAuth();
   const navigate = useNavigate();
+  const showAdminDashboard = ["admin"].includes(role);
 
   const handleEditClick = () => {
     // Navigate to the edit page with the opal ID as a parameter
@@ -31,7 +33,10 @@ const OpalDetails = ({ opal, onDelete }) => {
       <p className="dash-opal-text"><strong>Tone:</strong> {opal.tone}</p>
       <p className="dash-opal-text"><strong>Price:</strong> {opal.pricing}</p>
       <button onClick={handleEditClick} className="dash-opal-button">Edit</button>
+      {/* Only show delete button to Admin */}
+      {showAdminDashboard && (
       <button onClick={handleDeleteClick} className="dash-opal-button">Delete</button>
+      )}
     </div>
   );
 };
