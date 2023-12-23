@@ -1,0 +1,60 @@
+body {
+    font-family: "Playfair Display";
+}
+
+.browse-title {
+    text-align: center;
+}
+
+.browse-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-opal-img {
+    width: 40vw;
+}
+
+.specifications-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.specifications-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options-label{
+    font-size: 1.2rem;
+}
+
+
+select {
+    font-family: "Playfair Display"; 
+    padding: 8px; 
+    margin-bottom: 16px; 
+    font-size: 1.1rem;
+}
+
+.quote-button{
+    background-color: #ffb6c1; 
+    color: #fff; 
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #fff; 
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s; 
+}
+
+.quote-button:hover {
+    background-color: #fff; 
+    color: #ffb6c1; 
+    border: 2px solid #ffb6c1;
+  }
+
+.price-text{
+    font-size: 1.8rem;
+}

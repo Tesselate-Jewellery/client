@@ -53,8 +53,8 @@ const About = () => {
                         of her humble beginnings. Aisha's fascination with opals, 
                         sparked at a tender age, became her guiding light amid the challenges 
                         of her upbringing. The luminescent hues of these precious stones mirrored 
-                        the kaleidoscope of colors she encountered daily in the vibrant tapestry during her 
-                        rough childhood.
+                        the kaleidoscope of colors she encountered daily in the vibrant tapestry 
+                        during her childhood.
                     </p>
                 </div>
                 <img src="/assets/town.jpg" alt="Birthplace" className="birthplace-img" />

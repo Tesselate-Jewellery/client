@@ -5,6 +5,13 @@
     text-align: center;
 }
 
+.contact-img{
+    margin-top: 20px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 p {
     margin: 40px;
     font-size: 1.3rem;
