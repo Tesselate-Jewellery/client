@@ -43,7 +43,7 @@ describe('Gallery Component', () => {
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
 
     await waitFor(() => {
-        expect(screen.getByText(/Opals/i)).toBeInTheDocument();
+        expect(screen.getByText(/Opal Gallery/i)).toBeInTheDocument();
         // Once fetched, loading text should not be there
         expect(screen.queryByText(/loading/i)).not.toBeInTheDocument();
     });
