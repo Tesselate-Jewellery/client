@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 import { toast } from "react-toastify";
+import '../styling/EditOpal.css';
 
 const EditOpal = () => {
     const { opal_id } = useParams();
@@ -60,66 +61,94 @@ const EditOpal = () => {
     };
 
     return (
-        <div>
-            <h1>Edit Opal</h1>
-            <label htmlFor="name">Name:</label>
-            <input
-                type="text"
-                name="name"
-                value={opalData.name || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="image">Image:</label>
-            <input
-                type="text"
-                name="image"
-                value={opalData.image || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="origin">Origin:</label>
+        <div className="edit-container">
+            <h1>EDIT OPAL</h1>
+            <div>
+                <label htmlFor="name" className="edit-text"><strong>Name: </strong></label>
+                <input
+                    type="text"
+                    name="name"
+                    value={opalData.name || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <label htmlFor="image" className="edit-text"><strong>Image: </strong></label>
+                <input
+                    type="text"
+                    name="image"
+                    value={opalData.image || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+            <label htmlFor="origin" className="edit-text"><strong>Origin: </strong></label>
             <input
                 type="text"
                 name="origin"
                 value={opalData.origin || ''}
                 onChange={handleInputChange}
+                className="edit-input"
             />
-            <label htmlFor="weight">Weight:</label>
-            <input
-                type="number"
-                name="weight"
-                value={opalData.weight || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="dimensions">Dimensions:</label>
-            <input
-                type="text"
-                name="dimensions"
-                value={opalData.dimensions || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="brightness">Brightness:</label>
-            <input
-                type="text"
-                name="brightness"
-                value={opalData.brightness || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="tone">Tone:</label>
-            <input
-                type="text"
-                name="tone"
-                value={opalData.tone || ''}
-                onChange={handleInputChange}
-            />
-            <label htmlFor="pricing">Pricing:</label>
-            <input
-                type="number"
-                name="pricing"
-                value={opalData.pricing || ''}
-                onChange={handleInputChange}
-            />
-            <button onClick={handleSaveClick}>Save</button>
-            <button onClick={() => navigate('/opals')}>Go Back</button>
+            </div>
+            <div>
+                <label htmlFor="weight" className="edit-text"><strong>Weight: </strong></label>
+                <input
+                    type="number"
+                    name="weight"
+                    value={opalData.weight || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <label htmlFor="dimensions" className="edit-text"><strong>Dimensions: </strong></label>
+                <input
+                    type="text"
+                    name="dimensions"
+                    value={opalData.dimensions || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <label htmlFor="brightness" className="edit-text"><strong>Brightness: </strong></label>
+                <input
+                    type="text"
+                    name="brightness"
+                    value={opalData.brightness || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <label htmlFor="tone" className="edit-text"><strong>Tone: </strong></label>
+                <input
+                    type="text"
+                    name="tone"
+                    value={opalData.tone || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <label htmlFor="pricing" className="edit-text"><strong>Pricing: </strong></label>
+                <input
+                    type="number"
+                    name="pricing"
+                    value={opalData.pricing || ''}
+                    onChange={handleInputChange}
+                    className="edit-input"
+                />
+            </div>
+            <div>
+                <button onClick={handleSaveClick} className="edit-button">Save</button>
+            </div>
+            <div>
+                <button onClick={() => navigate('/opals')} className="edit-button">Go Back</button>
+            </div>
         </div>
     );
 };
