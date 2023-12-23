@@ -11,5 +11,5 @@ test('renders footer text', () => {
 
   expect(screen.getByText(/Tesselate Jewellery/i)).toBeInTheDocument();
   expect(screen.getByText(/Bespoke Opal Rings/i)).toBeInTheDocument();
-  expect(screen.getByText(/Handcrafted with attention to the finest details./i)).toBeInTheDocument();
+  expect(screen.getByText(/Every piece is unique and handcrafted/i)).toBeInTheDocument();
 });
