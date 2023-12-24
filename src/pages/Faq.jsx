@@ -35,9 +35,9 @@ const Faq = () => {
             </div>
 
             <div>
-                <h3 className="faq-header">May I use my opal for custom jewelry?</h3>
+                <h3 className="faq-header">May I use my opal for custom jewellery?</h3>
                 <p>
-                    We appreciate your interest, but currently, we're unable to accept external opals for custom jewelry. Our commitment to quality craftsmanship and the unique characteristics of our sourced opals guides our process. If you have any specific inquiries or need assistance, feel free to reach out, and we'll do our best to help.
+                    We appreciate your interest, but currently, we're unable to accept external opals for custom jewellery. Our commitment to quality craftsmanship and the unique characteristics of our sourced opals guides our process. If you have any specific inquiries or need assistance, feel free to reach out, and we'll do our best to help.
                 </p>
             </div>
 
@@ -56,7 +56,7 @@ const Faq = () => {
             </div>
 
             <div>
-                <h3 className="faq-header">What's the best way to care for my opal jewelry?</h3>
+                <h3 className="faq-header">What's the best way to care for my opal jewellery?</h3>
                 <p>
                     Find guidance in our care guide or reach out to us via email for detailed information on maintaining your opal pieces. Every purchase includes care instructions.
                 </p>
